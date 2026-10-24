@@ -1,21 +1,166 @@
+
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MovieBook | Ticket Booking</title><link rel="stylesheet" href="/style.css"></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieBook | Ticket Booking</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
 <body>
-<header><a class="logo" href="#">MovieBook 🎬</a><a href="#booking">Book Tickets</a></header>
-<section class="hero"><h1>Your Movies. <span>Your Seats.</span></h1><p>Choose a movie, select seats and book with confidence.</p></section>
-<main class="container"><h2>🎥 Now Showing</h2><p id="movieStatus"></p><div id="movieGrid" class="movie-grid"></div>
-<section id="booking" class="booking-box"><h2>🎟️ Book Your Tickets</h2>
-<form id="bookingForm"><div class="form-grid">
-<label>Your Name<input id="customerName" type="text" maxlength="100" required placeholder="Enter your name"></label>
-<label>Movie<select id="movieName" required><option value="">Choose a movie</option></select></label>
-<label>Show Date<input id="showDate" type="date" required></label>
-<label>Show Time<select id="showTime" required><option value="">Choose show time</option><option>10:00 AM</option><option>1:00 PM</option><option>6:00 PM</option><option>9:00 PM</option></select></label>
-<label>Number of Tickets<select id="tickets"><option value="1">1 Ticket</option><option value="2">2 Tickets</option><option value="3">3 Tickets</option><option value="4">4 Tickets</option><option value="5">5 Tickets</option><option value="6">6 Tickets</option><option value="7">7 Tickets</option><option value="8">8 Tickets</option></select></label>
-</div><h3>Choose Your Seats</h3><div class="screen">SCREEN THIS WAY</div><div id="seatGrid" class="seat-grid"></div>
-<div class="legend"><span>⬜ Available</span><span>🟩 Selected</span><span>⬛ Booked</span></div>
-<div class="summary"><p>Movie: <strong id="summaryMovie">Not selected</strong></p><p>Tickets: <strong id="summaryTickets">1</strong></p><p>Seats: <strong id="selectedSeatsText">None</strong></p><p class="total">Total Amount: ₹<span id="totalAmount">0</span></p></div>
-<h3>💳 Payment Method (Demo)</h3><div class="payments"><label><input type="radio" name="paymentMethod" value="ONLINE" required> Online Payment (Demo)</label><label><input type="radio" name="paymentMethod" value="CASH"> Cash at Counter</label></div>
-<p class="muted">No real online payment is processed.</p><button id="bookButton" class="submit-btn" type="submit">Confirm Booking</button></form>
-<div id="message" class="message" role="status" aria-live="polite"></div></section></main>
-<footer>© 2026 MovieBook | Movie Ticket Booking System</footer><script type="module" src="/main.js"></script>
-</body></html>
+    <header>
+        <a class="logo" href="#">MovieBook 🎬</a>
+        <a href="#booking">Book Tickets</a>
+    </header>
+
+    <section class="hero">
+        <h1>Your Movies. <span>Your Seats.</span></h1>
+        <p>Choose a movie, select seats and book with confidence.</p>
+    </section>
+
+    <main class="container">
+        <h2>🎥 Now Showing</h2>
+        <p id="movieStatus"></p>
+        <div id="movieGrid" class="movie-grid"></div>
+
+        <section id="booking" class="booking-box">
+            <h2>🎟️ Book Your Tickets</h2>
+
+            <form id="bookingForm">
+                <div class="form-grid">
+
+                    <label>
+                        Your Name
+                        <input
+                            id="customerName"
+                            type="text"
+                            maxlength="100"
+                            required
+                            placeholder="Enter your name"
+                        >
+                    </label>
+
+                    <label>
+                        Movie
+                        <select id="movieName" required>
+                            <option value="">Choose a movie</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Show Date
+                        <input id="showDate" type="date" required>
+                    </label>
+
+                    <label>
+                        Show Time
+                        <select id="showTime" required>
+                            <option value="">Choose show time</option>
+                            <option>10:00 AM</option>
+                            <option>1:00 PM</option>
+                            <option>6:00 PM</option>
+                            <option>9:00 PM</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Number of Tickets
+                        <select id="tickets">
+                            <option value="1">1 Ticket</option>
+                            <option value="2">2 Tickets</option>
+                            <option value="3">3 Tickets</option>
+                            <option value="4">4 Tickets</option>
+                            <option value="5">5 Tickets</option>
+                            <option value="6">6 Tickets</option>
+                            <option value="7">7 Tickets</option>
+                            <option value="8">8 Tickets</option>
+                        </select>
+                    </label>
+
+                </div>
+
+                <h3>Choose Your Seats</h3>
+
+                <div class="screen">SCREEN THIS WAY</div>
+                <div id="seatGrid" class="seat-grid"></div>
+
+                <div class="legend">
+                    <span>⬜ Available</span>
+                    <span>🟩 Selected</span>
+                    <span>⬛ Booked</span>
+                </div>
+
+                <div class="summary">
+                    <p>
+                        Movie:
+                        <strong id="summaryMovie">Not selected</strong>
+                    </p>
+
+                    <p>
+                        Tickets:
+                        <strong id="summaryTickets">1</strong>
+                    </p>
+
+                    <p>
+                        Seats:
+                        <strong id="selectedSeatsText">None</strong>
+                    </p>
+
+                    <p class="total">
+                        Total Amount: ₹<span id="totalAmount">0</span>
+                    </p>
+                </div>
+
+                <h3>💳 Payment Method (Demo)</h3>
+
+                <div class="payments">
+                    <label>
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="ONLINE"
+                            required
+                        >
+                        Online Payment (Demo)
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="CASH"
+                        >
+                        Cash at Counter
+                    </label>
+                </div>
+
+                <p class="muted">
+                    No real online payment is processed.
+                </p>
+
+                <button
+                    id="bookButton"
+                    class="submit-btn"
+                    type="submit"
+                >
+                    Confirm Booking
+                </button>
+            </form>
+
+            <div
+                id="message"
+                class="message"
+                role="status"
+                aria-live="polite"
+            ></div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 MovieBook | Movie Ticket Booking System
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>

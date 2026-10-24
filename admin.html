@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Ticket Booking - Admin Dashboard</h1>
+        <a href="index.html">Back to Booking Website</a>
+        <button id="logoutBtn" type="button">Logout</button>
+    </header>
+
+    <main>
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Bookings</h3>
+                <h2 id="totalBookings">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Tickets</h3>
+                <h2 id="totalTickets">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Revenue</h3>
+                <h2 id="totalRevenue">₹0</h2>
+            </div>
+        </section>
+
+        <section class="bookings">
+            <h2>All Customer Bookings</h2>
+
+            <button id="refreshBtn">Refresh Bookings</button>
+
+            <p id="message">Loading bookings...</p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Customer</th>
+                            <th>Movie</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Seats</th>
+                            <th>Tickets</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
